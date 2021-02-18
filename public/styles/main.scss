@@ -1,0 +1,12 @@
+@use "./utilities" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: $color_9;
+    background-color: $color_0;
+}

@@ -1,0 +1,30 @@
+$color_0: #101010;
+$color_1: #292929;
+$color_2: #404040;
+$color_9: #E7DFD4;
+
+@mixin small {
+    @media only screen and (min-width: 600px){
+        @content;
+    }
+}
+
+@mixin medium {
+    @media only screen and (min-width: 1024px){
+        @content;
+    }
+}
+
+@mixin large {
+    @media only screen and (min-width: 1440px){
+        @content;
+    }
+}
+
+@mixin flex-box{
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+}
