@@ -1,0 +1,11 @@
+@use "./utilities" as *;
+
+.visual-container {
+    @include flex-box;
+    flex-direction: column;
+    justify-content: center;
+
+    .visual-block {
+        padding: 10px;
+    }
+}

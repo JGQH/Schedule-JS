@@ -3,8 +3,10 @@
 .selector-container {
     @include flex-box;
     flex-direction: row;
+    text-align: center;
     @include small{
         flex-direction: column;
+        justify-content: center;
     }
 
     .selector-option {
@@ -14,23 +16,25 @@
 
         padding: 10px;
         margin: 10px;
-        box-shadow: 5px 5px 10px $color_2;
+        box-shadow: 5px 5px 7px $color_1;
         transition: all .25s ease;
 
         border:{
-            width: 1px;
+            width: 2px;
             style: solid;
             color: $color_1;
             radius: 5px;
         }
 
         &:hover {
-            $diff: 1px;
+            $diff: 3px;
             cursor: pointer;
             top: -$diff;
             right: $diff;
-            box-shadow: (5px + 2*$diff) (5px + 2*$diff) 5px $color_2;
+            box-shadow: (5px + 2*$diff) (5px + 2*$diff) 3px $color_1;
         }
+
+        width: 80%;
     }
 
     .selector-arrow {

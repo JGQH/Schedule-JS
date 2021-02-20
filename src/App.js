@@ -1,20 +1,28 @@
 import { useState } from 'react';
 import Selector from './Selector';
+import { tutorial } from './scripts/Tutorial';
+import { blocks } from './scripts/Blocks';
+import { classes } from './scripts/Classes';
+import { generate } from './scripts/Generate';
 
 const App = () => {
   const [tab, setTab] = useState(0)
   const selectors = [
     {
-      "text":"Tutorial"
+      "text":"Tutorial",
+      "html": tutorial
     },
     {
-      "text":"Crear bloques"
+      "text":"Crear Bloques",
+      "html": blocks
     },
     {
-      "text":"Visualizar cursos"
+      "text":"Visualizar Cursos",
+      "html": classes
     },
     {
-      "text":"Horarios generados"
+      "text":"Horarios Generados",
+      "html": generate
     }
   ];
   return (
@@ -28,9 +36,12 @@ const App = () => {
       </>
       : //List of tabs
       selectors.map((selector, index) => {
-        return <Selector key={index} text={selector.text}/>
+        return <Selector key={index} text={selector.text} onClick={() => setTab(index)}/>
       })
       }
+    </div>
+    <div className="visual-container">
+      {selectors[tab].html()}
     </div>
     </>
   );

@@ -1,7 +1,10 @@
-$color_0: #101010;
-$color_1: #292929;
-$color_2: #404040;
-$color_9: #E7DFD4;
+/* Palette "OIL 6", taken from "https://lospec.com/palette-list/oil-6" */
+$color_0: #272744;
+$color_1: #494d7e;
+$color_2: #8b6d9c;
+$color_3: #c69fa5;
+$color_4: #f2d3ab;
+$color_5: #fbf5ef;
 
 @mixin small {
     @media only screen and (min-width: 600px){

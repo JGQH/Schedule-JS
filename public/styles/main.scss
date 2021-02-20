@@ -7,6 +7,27 @@
 }
 
 body {
-    color: $color_9;
+    color: $color_5;
     background-color: $color_0;
+}
+
+#schedule-app {
+    width: 100vw;
+    height: 100vh;
+
+    @include flex-box;
+    flex-direction: column;
+
+    @include small{
+        flex-direction: row;
+
+        $distribution: 25%;
+        .selector-container {
+            width: $distribution;
+        }
+
+        .visual-container {
+            width: 100% - $distribution;
+        }
+    }
 }
