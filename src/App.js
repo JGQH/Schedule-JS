@@ -1,28 +1,28 @@
 import { useState } from 'react';
 import Selector from './Selector';
-import { tutorial } from './scripts/Tutorial';
-import { blocks } from './scripts/Blocks';
-import { classes } from './scripts/Classes';
-import { generate } from './scripts/Generate';
+import Tutorial from './scripts/Tutorial';
+import Blocks from './scripts/Blocks';
+import Classes from './scripts/Classes';
+import Generate from './scripts/Generate';
 
 const App = () => {
   const [tab, setTab] = useState(0)
   const selectors = [
     {
       "text":"Tutorial",
-      "html": tutorial
+      "html": <Tutorial />
     },
     {
       "text":"Crear Bloques",
-      "html": blocks
+      "html": <Blocks list={Object.keys(localStorage)}/>
     },
     {
       "text":"Visualizar Cursos",
-      "html": classes
+      "html": <Classes />
     },
     {
       "text":"Horarios Generados",
-      "html": generate
+      "html": <Generate />
     }
   ];
   return (
@@ -41,7 +41,7 @@ const App = () => {
       }
     </div>
     <div className="visual-container">
-      {selectors[tab].html()}
+      {selectors[tab].html}
     </div>
     </>
   );
