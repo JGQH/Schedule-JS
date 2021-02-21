@@ -46,6 +46,7 @@
             font-size: medium;
 
             &:hover {
+                cursor: pointer;
                 background-color: $color_0;
                 color: $color_2;
             }
@@ -53,5 +54,70 @@
             width: 100%;
             padding: 15px;
         }
+    }
+
+    /* Classes */
+    .classes-container {
+        &-selector, &-visual {
+            width: 75%;
+        }
+
+        &-selector {
+            .classes-selector {
+                display: inline-block;
+                width: 50%;
+                padding: 10px;
+    
+                select {
+                    background-color: $color_1;
+                    border-color: $color_2;
+                    color: $color_5;
+                    border-radius: 10px;
+                    width: 100%;
+                    padding: 10px;
+
+                    &:hover{
+                        background-color: $color_2;
+                        border-color: $color_1;
+                    }
+                }
+            }
+        }
+        
+        &-visual {
+            @include flex-box;
+            align-items: center;
+            flex-direction: column;
+            
+            .classes-arrow {
+                display: inline-block;
+                width: 25%;
+                aspect-ratio: 1;
+            }
+            .classes-holder {
+                width: 100%;
+
+                svg {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            @include small {
+                flex-direction: row;
+
+                $proportion: 15%;
+                .classes-arrow {
+                    width: $proportion;
+                }
+
+                .classes-holder {
+                    width: 100% - 2 * $proportion;
+                }
+            }
+        
+            
+        }
+        
     }
 }

@@ -3,6 +3,7 @@
 .selector-container {
     @include flex-box;
     flex-direction: row;
+    align-items: center;
     text-align: center;
     @include small{
         flex-direction: column;
@@ -26,6 +27,7 @@
             top: 0;
             right: 0;
             transition: all .25s ease;
+            width: 65%;
 
             &:hover {
                 $diff: 3px;
@@ -36,7 +38,7 @@
             }
         }
 
-        width: 80%;
+        width: 60%;
     }
 
     .selector-arrow {

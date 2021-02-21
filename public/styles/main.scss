@@ -21,7 +21,7 @@ body {
     @include small{
         flex-direction: row;
 
-        $distribution: 25%;
+        $distribution: 30%;
         .selector-container {
             width: $distribution;
         }
