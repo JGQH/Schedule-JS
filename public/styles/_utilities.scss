@@ -1,10 +1,10 @@
-/* Palette "OIL 6", taken from "https://lospec.com/palette-list/oil-6" */
-$color_0: #272744;
-$color_1: #494d7e;
-$color_2: #8b6d9c;
-$color_3: #c69fa5;
-$color_4: #f2d3ab;
-$color_5: #fbf5ef;
+/* Palette "CP_RUST-5", taken from "https://lospec.com/palette-list/cp_rust-5" */
+$color_0: #230000;
+$color_1: #712f30;
+$color_2: #a54932;
+$color_3: #e18866;
+$color_4: #f0bb9c;
+$color_5: #ffe2c6;
 
 @mixin small {
     @media only screen and (min-width: 600px){
@@ -30,4 +30,12 @@ $color_5: #fbf5ef;
     -ms-display: flex;
     -o-display: flex;
     display: flex;
+}
+
+@mixin blur($val){
+    -webkit-filter: blur($val);
+    -moz-filter: blur($val);
+    -o-filter: blur($val);
+    -ms-filter: blur($val);
+    filter: blur($val);
 }

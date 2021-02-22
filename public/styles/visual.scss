@@ -29,6 +29,7 @@
 
             input, select{
                 background-color: $color_0;
+                border-color: $color_2;
 
                 color: $color_5;
                 border-radius: 5px;
@@ -40,6 +41,7 @@
         .blocks-submit {
             
             border-radius: 15px;
+            border-color: $color_2;
             background-color: $color_2;
             color: $color_0;
             transition: all .25s ease;
@@ -58,11 +60,8 @@
 
     /* Classes */
     .classes-container {
-        &-selector, &-visual {
-            width: 75%;
-        }
-
         &-selector {
+            width: 75%;
             .classes-selector {
                 display: inline-block;
                 width: 50%;
@@ -85,38 +84,23 @@
         }
         
         &-visual {
-            @include flex-box;
-            align-items: center;
-            flex-direction: column;
-            
-            .classes-arrow {
-                display: inline-block;
-                width: 25%;
-                aspect-ratio: 1;
-            }
-            .classes-holder {
-                width: 100%;
-
-                svg {
-                    width: 100%;
-                    height: auto;
-                }
+            width: 87.5%;
+            @include small{
+                width: 60%;
             }
 
-            @include small {
-                flex-direction: row;
 
-                $proportion: 15%;
-                .classes-arrow {
-                    width: $proportion;
-                }
-
-                .classes-holder {
-                    width: 100% - 2 * $proportion;
-                }
+            path {
+                stroke: $color_5;
             }
-        
-            
+
+            text {
+                fill: $color_5;
+            }
+
+            .class-block {
+                fill: $color_2;
+            }
         }
         
     }

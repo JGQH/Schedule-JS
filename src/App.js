@@ -20,7 +20,7 @@ const App = () => {
     },
     {
       "text":"Visualizar Cursos",
-      "html": <Classes width={width}/>
+      "html": <Classes/>
     },
     {
       "text":"Horarios Generados",

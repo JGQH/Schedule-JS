@@ -10,7 +10,7 @@ const Blocks = ({list}) => {
 
   function uploadBlock() {
     if(blockClass.trim().length > 0 && blockGroup.trim().length > 0) {
-      if(window.confirm(`¿Seguro que desea guardar este bloque del curso ${blockClass} [${blockGroup}]?`)){
+      if(window.confirm(`¿Seguro que desea guardar este bloque del curso ${blockClass} [${blockGroup}] (${weekDays[blockDay]}, ${startHours[blockStart]} - ${endHours[blockEnd]})?`)){
         const currentGroups = JSON.parse(localStorage.getItem(blockClass) || "{}");
         const currentBlocks = currentGroups[blockGroup] || [];
         currentBlocks.push({
