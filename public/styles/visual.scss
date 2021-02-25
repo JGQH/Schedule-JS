@@ -104,4 +104,35 @@
         }
         
     }
+
+    /* Generate */
+    .schedule-container {
+        &-selector {
+            width: 75%;
+            
+            .schedule-selector {
+                display: inline-block;
+                width: 50%;
+                margin: auto 0;
+                padding: 20px;
+
+                button {
+                    width: 100%;
+                    padding: 10px;
+                }
+            }
+        }
+
+        &-visual {
+            width: 87.5%;
+            overflow-y: auto;
+
+            .schedule-checker {
+                width: 50%;
+                display: inline-block;
+                text-align: center;
+                padding: 15px;
+            }
+        }
+    }
 }

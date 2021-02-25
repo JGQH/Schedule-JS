@@ -1,16 +1,9 @@
+import { getClasses } from './Utilities';
 import { useEffect, useState } from 'react';
 import SvgClass from '../svg_scripts/SvgClass'
 
-function getClassesData() {
-  let data = {};
-  Object.keys(localStorage).forEach(className => {
-    data[className] = JSON.parse(localStorage.getItem(className));
-  });
-  return data;
-}
-
 const Classes = () => {
-  const classesData = getClassesData()
+  const classesData = getClasses()
   const classesNames = Object.keys(classesData);
   const [className, setName] = useState(classesNames[0] || "");
   const [classGroup, setGroup] = useState("");

@@ -9,3 +9,25 @@ export const endHours = [
 export const weekDays = [
     "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"
 ];
+
+export function getClasses() {
+    const data = {};
+    Object.keys(localStorage).forEach(className => {
+        data[className] = JSON.parse(localStorage.getItem(className));
+    });
+    return data;
+}
+
+export function getSelectors() {
+    const data = {};
+    Object.keys(localStorage).forEach(className => {
+        const groups = JSON.parse(localStorage.getItem(className));
+
+        const groupData = {};
+        Object.keys(groups).forEach(groupName => {
+            groupData[groupName] = true;
+        })
+        data[className] = groupData;
+    })
+    return data;
+}
