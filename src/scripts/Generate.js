@@ -15,10 +15,10 @@ const Generate = () => {
       <h1>Horarios Generados</h1>
       <div className="schedule-container-selector">
         <div className="schedule-selector">
-          <button onClick={() => isSelecting(true)}>Select Courses</button>
+          <button onClick={() => isSelecting(true)}>Seleccionar Clases</button>
         </div>
         <div className="schedule-selector">
-          <button onClick={() => isSelecting(false)}>See Schedules</button>
+          <button onClick={() => isSelecting(false)}>Ver Horarios</button>
         </div>
       </div>
       <div className="schedule-container-visual">
@@ -48,6 +48,8 @@ const Generate = () => {
         </>
         :
         <>
+          <p>No hay horarios generados</p>
+          <button>Generar Horarios</button>
         </>}
       </div>
     </>

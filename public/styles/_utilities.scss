@@ -32,6 +32,19 @@ $color_5: #ffe2c6;
     display: flex;
 }
 
+@mixin styles_clicker {
+    color: $color_5;
+    border-color: $color_2;
+    background-color: $color_1;
+
+    &:hover {
+        @content;
+        cursor: pointer;
+        border-color: $color_1;
+        background-color: $color_2;
+    }
+}
+
 @mixin blur($val){
     -webkit-filter: blur($val);
     -moz-filter: blur($val);

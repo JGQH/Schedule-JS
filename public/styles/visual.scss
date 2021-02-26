@@ -68,17 +68,11 @@
                 padding: 10px;
     
                 select {
-                    background-color: $color_1;
-                    border-color: $color_2;
-                    color: $color_5;
                     border-radius: 10px;
                     width: 100%;
                     padding: 10px;
 
-                    &:hover{
-                        background-color: $color_2;
-                        border-color: $color_1;
-                    }
+                    @include styles_clicker;
                 }
             }
         }
@@ -119,6 +113,10 @@
                 button {
                     width: 100%;
                     padding: 10px;
+
+                    border-radius: 5px;
+
+                    @include styles_clicker;
                 }
             }
         }
@@ -129,9 +127,26 @@
 
             .schedule-checker {
                 width: 50%;
-                display: inline-block;
-                text-align: center;
+
+                @include small {
+                    width: 33%;
+                }
+                display: inline-flex;
                 padding: 15px;
+
+                flex-direction: column;
+                align-items: center;
+
+                .schedule-class {
+                    padding: 10px;
+                    border: 1px solid $color_2;
+                    border-radius: 10px;
+                    background-color: $color_1;
+                }
+
+                .schedule-groups {
+                    padding: 10px;
+                }
             }
         }
     }
