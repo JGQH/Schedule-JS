@@ -1,4 +1,4 @@
-import { getClasses } from '../scripts/Utilities'
+import { getClasses, loopJson, sizeJson } from '../scripts/Utilities'
 
 /* NOTE: This algorithm is basically brute force, so it will check all the possibilities, which can result in a slow "creation" time (Also, not precisely optimized) */
 
@@ -27,20 +27,18 @@ function generateSchedules(selecting) {
 function prepareSchedules(selecting) {
     const classes = getClasses();
     data = {};
-    Object.keys(selecting).forEach(className => { //Checking every class
+    loopJson(selecting, className => { //Checking every class
         const selectedGroups = {};
         const groups = selecting[className]
-        Object.keys(groups).forEach(groupName => { //From each class, we get it's groups
+        loopJson(groups, groupName => { //From each class, we get it's groups
             if(groups[groupName]) { //If a group is selected, save the blocks it has
                 selectedGroups[groupName] = classes[className][groupName];
             }
         })
 
-        if(Object.keys(selectedGroups).length > 0) { //If no groups were selected, it is not added to the data
+        if(sizeJson(selectedGroups) > 0) { //If no groups were selected, it is not added to the data
             data[className] = selectedGroups
         }
-
-        /* NOTE: I wish this was like Python when it comes to looping through an array, this "Object.keys" thing annoys the heck out of me */
     })
 }
 
@@ -52,9 +50,9 @@ function setGeneral(){
     jgroups = {};
     counter = 1;
 
-    Object.keys(data).forEach(className => {
+    loopJson(data, className => {
         jgroups[className] = 0;
-        counter *= Object.keys(data[className]).length
+        counter *= sizeJson(data[className]);
     })
 }
 
@@ -92,17 +90,16 @@ function checkGroups() {
     const classes = {}; //Holder for which course (class + group) will be saved with it's blocks
 
     //STEP 1: Getting which groups to evaluate based on jgroups (Combination of current groups)
-    Object.keys(data).forEach(className => {
+    loopJson(data, className => {
         const groupNames = Object.keys(data[className]);
         const groupName = groupNames[jgroups[className]]; //groupNames[igroup] from loopGroups
 
         const courseName = `${className} [${groupName}]`;
         classes[courseName] = data[className][groupName]; //Saving group blocks under course name
     })
-    console.log(classes);
 
     //STEP 2: Check if none of the blocks intersect
-    Object.keys(classes).forEach(courseName => {
+    loopJson(classes, courseName => {
         const blocks = classes[courseName];
         for(let i = 0; i < blocks.length; i++){
             const block = blocks[i];

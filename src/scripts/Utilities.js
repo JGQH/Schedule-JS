@@ -39,3 +39,15 @@ export function getSchedules() {
 export function saveSchedule(schedules) {
     sessionStorage.setItem("schedules", JSON.stringify(schedules));
 }
+
+export function mapJson(json = {}, callback = (v => v)) {
+    return Object.keys(json).map(callback);
+}
+
+export function loopJson(json = {}, callback = (v => console.log(v))) {
+    Object.keys(json).forEach(callback);
+}
+
+export function sizeJson(json = {}) {
+    return Object.keys(json).length;
+}

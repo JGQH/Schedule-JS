@@ -1,5 +1,5 @@
 import { generateSchedules } from '../xtra_scripts/GenClasses'
-import { getSelectors, getSchedules, saveSchedule } from './Utilities';
+import { getSelectors, getSchedules, saveSchedule, mapJson } from './Utilities';
 import { useState } from 'react';
 
 const Generate = () => {
@@ -32,7 +32,7 @@ const Generate = () => {
       <div className="schedule-container-visual">
         {selecting ?
         <>
-          {Object.keys(states).map((className, classIndex) => {
+          {mapJson(states, (className, classIndex) => {
             //Creates list of all classes
             return (
               <div key={classIndex} className="schedule-checker">
@@ -40,7 +40,7 @@ const Generate = () => {
                   <p>{className}</p>
                 </div>
                 <div className="schedule-groups">
-                  {Object.keys(states[className]).map((groupName, groupIndex) => {
+                  {mapJson(states[className], (groupName, groupIndex) => {
                     //Each class has a list of its groups
                     return (
                       <div key={groupIndex}>

@@ -1,4 +1,4 @@
-import { getClasses } from './Utilities';
+import { getClasses, mapJson } from './Utilities';
 import { useEffect, useState } from 'react';
 import SvgClass from '../xtra_scripts/SvgClass'
 
@@ -38,12 +38,9 @@ const Classes = () => {
         </div>
         <div className="classes-selector">
           <select onChange={evt => changeGroups(evt.target.value)}>
-            {(() => {
-              let groupsNames = Object.keys(classesData[className]);
-              return groupsNames.map((name, index) => {
+            {(() => mapJson(classesData[className], (name, index) => {
                 return <option key={index} value={index}>{name}</option>
-              })
-            })()}
+              }))()}
           </select>
         </div>
       </div>
