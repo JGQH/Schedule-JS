@@ -31,3 +31,11 @@ export function getSelectors() {
     })
     return data;
 }
+
+export function getSchedules() {
+    return JSON.parse(sessionStorage.getItem("schedules")) || [];
+}
+
+export function saveSchedule(schedules) {
+    sessionStorage.setItem("schedules", JSON.stringify(schedules));
+}

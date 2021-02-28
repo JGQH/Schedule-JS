@@ -1,6 +1,6 @@
 import { getClasses } from './Utilities';
 import { useEffect, useState } from 'react';
-import SvgClass from '../svg_scripts/SvgClass'
+import SvgClass from '../xtra_scripts/SvgClass'
 
 const Classes = () => {
   const classesData = getClasses()

@@ -1,14 +1,22 @@
-import { getSelectors } from './Utilities';
+import { generateSchedules } from '../xtra_scripts/GenClasses'
+import { getSelectors, getSchedules, saveSchedule } from './Utilities';
 import { useState } from 'react';
 
 const Generate = () => {
   const [selecting, isSelecting] = useState(true);
   const [states, setStates] = useState(getSelectors())
+  const [schedules, setSchedules] = useState(getSchedules());
 
   function setState(className, groupName, val) {
     const states_ = {...states};
     states_[className][groupName] = val;
     setStates(states_);
+  }
+
+  function createSchedules() {
+    const schedules_ = generateSchedules(states);
+    saveSchedule(schedules_);
+    setSchedules(schedules_);
   }
   return (
     <>
@@ -48,8 +56,15 @@ const Generate = () => {
         </>
         :
         <>
-          <p>No hay horarios generados</p>
-          <button>Generar Horarios</button>
+          {(schedules.length == 0) ?
+          <>
+            <p>No hay horarios generados</p>
+          </>
+          :
+          <>
+            <p>Horarios generados: {schedules.length}</p>
+          </>}
+          <button onClick={createSchedules}>Generar Horarios</button>
         </>}
       </div>
     </>
