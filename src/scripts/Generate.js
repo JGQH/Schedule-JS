@@ -1,3 +1,5 @@
+import SvgSchedule from '../xtra_scripts/SvgSchedule';
+import DispClasses from '../xtra_scripts/DispSelectors';
 import { generateSchedules } from '../xtra_scripts/GenClasses'
 import { getSelectors, getSchedules, saveSchedule, mapJson } from './Utilities';
 import { useState } from 'react';
@@ -17,6 +19,7 @@ const Generate = () => {
     const schedules_ = generateSchedules(states);
     saveSchedule(schedules_);
     setSchedules(schedules_);
+    alert(`¡Horarios generados correctamente! [${schedules.length}]`);
   }
   return (
     <>
@@ -32,38 +35,18 @@ const Generate = () => {
       <div className="schedule-container-visual">
         {selecting ?
         <>
-          {mapJson(states, (className, classIndex) => {
-            //Creates list of all classes
-            return (
-              <div key={classIndex} className="schedule-checker">
-                <div className="schedule-class">
-                  <p>{className}</p>
-                </div>
-                <div className="schedule-groups">
-                  {mapJson(states[className], (groupName, groupIndex) => {
-                    //Each class has a list of its groups
-                    return (
-                      <div key={groupIndex}>
-                        <label>{groupName}</label>
-                        <input type="checkbox" onChange={evt => setState(className, groupName, evt.target.checked)} checked={states[className][groupName]} />
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            )
-          })}
+          <DispClasses states={states} setState={setState} />
         </>
         :
         <>
           {(schedules.length == 0) ?
           <>
-            <p>No hay horarios generados</p>
+            <h1 style={{textAlign:"center"}}>No hay horarios para mostrar</h1>
           </>
           :
-          <>
-            <p>Horarios generados: {schedules.length}</p>
-          </>}
+          <div className="schedule-visualizer">
+            <SvgSchedule schedules={schedules} />
+          </div>}
           <button onClick={createSchedules}>Generar Horarios</button>
         </>}
       </div>

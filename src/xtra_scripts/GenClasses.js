@@ -13,6 +13,8 @@ function generateSchedules(selecting) {
     prepareSchedules(selecting);
     setGeneral();
 
+    if(counter == 1) return []; //Line break, stub for fixing this in the loop
+    
     do {
         checkGroups()
     } while(loopGroups())
