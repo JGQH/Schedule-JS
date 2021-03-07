@@ -148,6 +148,37 @@
                     padding: 10px;
                 }
             }
+
+            .schedule-visualizer {
+                display: grid;
+                grid-template-columns: 2fr 5fr 2fr;
+                grid-template-areas:
+                "courses schedule arrowp"
+                "courses schedule null"
+                "courses schedule arrown";
+
+                .schedule-courses {
+                    grid-area: courses;
+                }
+
+                .schedule-graph {
+                    grid-area: schedule;
+                }
+
+                .schedule-arrow {
+                    &-prev, &-next {
+                        aspect-ratio: 1;
+                    }
+
+                    &-prev {
+                        grid-area: arrowp;
+                    }
+
+                    &-next {
+                        grid-area: arrown;
+                    }
+                }
+            }
         }
     }
 }

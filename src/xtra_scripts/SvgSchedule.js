@@ -11,21 +11,28 @@ const SvgSchedule = ({schedules = []}) => {
         return getColor(p);
     }
 
+    function setSchedule(index_){
+        if((index_ == -1) || (index_ == schedules.length)) return;
+
+        setIndex(index_)
+    }
+
     useEffect(() => {
         setIndex(0);
     }, [schedules]);
 
     return (
     <>
-        <div>
+        <div className="schedule-courses">
+            <h3 >Horario {index + 1}/{schedules.length}</h3>
             {mapJson(schedules[index], (courseName, key) => {
                 return <p key={key} style={{color:findColor(key)}}>{courseName}</p>
             })}
         </div>
-        <div>
+        <div className="schedule-graph">
             <svg width="100%" height="100%" viewBox="0 0 600 544" preserveAspectRatio="xMaxYMax">
                 <pattern id="grid" width="100" height="32" patternUnits="userSpaceOnUse">
-                    <path d="M 0 0 L 100 0 L 100 32 L 0 32 Z" fill="none" strokeWidth="0.25" stroke="#000000"/>
+                    <path d="M 0 0 L 100 0 L 100 32 L 0 32 Z" fill="#ffffff" strokeWidth="0.25" stroke="#000000"/>
                 </pattern>
                 <rect width="600" height="544" fill="url(#grid)" />
                 <text>
@@ -68,10 +75,8 @@ const SvgSchedule = ({schedules = []}) => {
                 })}
             </svg>
         </div>
-        <div>
-            <div></div>
-            <div></div>
-        </div>
+        <div className="schedule-arrow-prev" onClick={() => setSchedule(index - 1)}>prev</div>
+        <div className="schedule-arrow-next" onClick={() => setSchedule(index + 1)}>next</div>
     </>)
 }
 

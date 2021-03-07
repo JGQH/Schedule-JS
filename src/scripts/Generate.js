@@ -1,7 +1,7 @@
 import SvgSchedule from '../xtra_scripts/SvgSchedule';
 import DispClasses from '../xtra_scripts/DispSelectors';
 import { generateSchedules } from '../xtra_scripts/GenClasses'
-import { getSelectors, getSchedules, saveSchedule, mapJson } from './Utilities';
+import { getSelectors, getSchedules, saveSchedule } from './Utilities';
 import { useState } from 'react';
 
 const Generate = () => {
@@ -19,7 +19,7 @@ const Generate = () => {
     const schedules_ = generateSchedules(states);
     saveSchedule(schedules_);
     setSchedules(schedules_);
-    alert(`¡Horarios generados correctamente! [${schedules.length}]`);
+    alert("¡Horarios generados correctamente!");
   }
   return (
     <>
