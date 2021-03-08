@@ -18,9 +18,16 @@ This project is a practice for introduction to SASS/SCSS and getting it to work 
 - NodeJS v15.8.0
 
 ## Illustrations
-_Currently no Illustrations_
+
+| Tutorial | Create Blocks |
+|:---:|:---:|
+|![Tutorial](./readme/img_01.png)|![Blocks](./readme/img_02.png)|
+
+| Courses | Schedules |
+|:---:|:---:|
+|![Courses](./readme/img_03.png)| *Not Finished Yet* |
+
 
 ## To-Do
-- Complete the visualization of courses and blocks
-- Complete the algorithm to generate schedules
-- Visualize said generated schedules
+- Complete schedules' visualization
+- Add way to remove blocks
