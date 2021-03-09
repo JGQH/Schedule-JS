@@ -1,4 +1,5 @@
 import BlockCreator from '../xtra_scripts/BlockCreator';
+import BlockDeleter from '../xtra_scripts/BlockDeleter';
 import { useState } from 'react';
 
 const Blocks = () => {
@@ -18,7 +19,7 @@ const Blocks = () => {
       {creating ?
         <BlockCreator />
       :
-        <></>
+        <BlockDeleter />
       }
       
     </>

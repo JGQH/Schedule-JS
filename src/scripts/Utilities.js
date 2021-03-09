@@ -31,6 +31,28 @@ export function saveClasses(className, groupName, block) {
     localStorage.setItem(className, JSON.stringify(currentGroups));
 }
 
+export function deleteClasses(className, groupName, index) {
+    const currentGroups = JSON.parse(localStorage.getItem(className));
+    const currentBlocks = currentGroups[groupName];
+
+    currentBlocks.splice(index, 1);
+    console.log(currentBlocks);
+
+    if(currentBlocks.length == 0){
+        delete currentGroups[groupName];
+        console.log(currentGroups);
+
+        if(sizeJson(currentGroups) == 0) {
+            localStorage.removeItem(className);
+        }else{
+            localStorage.setItem(className, JSON.stringify(currentGroups));
+        }
+    }else{
+        currentGroups[groupName] = currentBlocks
+        localStorage.setItem(className, JSON.stringify(currentGroups));
+    }
+}
+
 export function getSelectors() {
     const data = {};
     Object.keys(localStorage).forEach(className => {
