@@ -15,12 +15,12 @@ const App = () => {
       "html": <Tutorial />
     },
     {
-      "text":"Crear Bloques",
-      "html": <Blocks list={Object.keys(localStorage)}/>
+      "text":"Administrar Bloques",
+      "html": <Blocks />
     },
     {
       "text":"Visualizar Cursos",
-      "html": <Classes/>
+      "html": <Classes />
     },
     {
       "text":"Horarios Generados",

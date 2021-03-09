@@ -10,12 +10,25 @@ export const weekDays = [
     "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"
 ];
 
+export function getDay(day, start, end) {
+    return `${weekDays[day]}, ${startHours[start]} - ${endHours[end]}`;
+}
+
 export function getClasses() {
     const data = {};
     Object.keys(localStorage).forEach(className => {
         data[className] = JSON.parse(localStorage.getItem(className));
     });
     return data;
+}
+
+export function saveClasses(className, groupName, block) {
+    const currentGroups = JSON.parse(localStorage.getItem(className) || "{}");
+    const currentBlocks = currentGroups[groupName] || [];
+    currentBlocks.push(block)
+    currentGroups[groupName] = currentBlocks;
+
+    localStorage.setItem(className, JSON.stringify(currentGroups));
 }
 
 export function getSelectors() {
