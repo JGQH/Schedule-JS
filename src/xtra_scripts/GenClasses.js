@@ -98,10 +98,10 @@ function checkGroups() {
 
         const courseName = `${className} [${groupName}]`;
         classes[courseName] = data[className][groupName]; //Saving group blocks under course name
-    })
+    });
 
     //STEP 2: Check if none of the blocks intersect
-    loopJson(classes, courseName => {
+    for (const courseName in classes) {
         const blocks = classes[courseName];
         for(let i = 0; i < blocks.length; i++){
             const block = blocks[i];
@@ -109,7 +109,7 @@ function checkGroups() {
 
             if(!checkBlocks(dayBlocks, block)) return;
         }
-    })
+    }
 
     //STEP 3: If we reached this point, it means all blocks of current group combination are valid. Therefore, it has to be stored
     jlists.push(classes);
