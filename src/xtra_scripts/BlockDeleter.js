@@ -18,27 +18,21 @@ const BlockDeleter = () => {
 
     return (
     <div className="blocks-manager">
-        {mapJson(classes, (className, index1) => {
-            return (
-                <div key={index1}>
-                    <h1>{className}</h1>
-                    {mapJson(classes[className], (groupName, index2) => {
-                        return (
-                        <div key={index2}>
-                            <p>{groupName}</p>
-                            {classes[className][groupName].map((block, index3) => {
-                                return (
-                                    <div key={index3}>
-                                        {getDay(block.Day, block.Start, block.End)}
-                                        <button onClick={() => deleteBlock(className, groupName, index3)}>✖</button>
-                                    </div>
-                                )
-                            })}
-                        </div>)
-                    })}
-                </div>
-            )
-        })}
+        {mapJson(classes, (className, classIndex) => (
+            <div key={classIndex} className="class-holder">
+                <h1>{className}</h1>
+                {mapJson(classes[className], (groupName, groupIndex) => (
+                    <div key={groupIndex} className="group-holder">
+                        <h3>{groupName}</h3>
+                        {classes[className][groupName].map((block, blockIndex) => (
+                            <p key={blockIndex} className="block-holder" onClick={() => deleteBlock(className, groupName, blockIndex)}>
+                                {getDay(block.Day, block.Start, block.End)}
+                            </p>)
+                        )}
+                    </div>)
+                )}
+            </div>)
+        )}
     </div>)
 }
 

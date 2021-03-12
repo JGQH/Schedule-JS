@@ -4,7 +4,10 @@
     @include flex-box;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+
+    @include small {
+        justify-content: center;
+    }
 
     /* Tutorial */
     .tutorial-block {
@@ -55,6 +58,60 @@
 
             width: 100%;
             padding: 15px;
+        }
+    }
+
+    .blocks-container-selector {
+        width: 75%;
+        .blocks-selector {
+            padding: 10px;;
+            display: inline-block;
+            width: 50%;
+
+            button {
+                width: 100%;
+                padding: 10px;
+                @include styles_clicker;
+            }
+        }
+    }
+
+    .blocks-manager {
+        width: 75%;
+        height: 60%;
+
+        @include small {
+            height: 75%;
+        }
+
+        overflow-y: auto;
+        text-align: center;
+
+        .class-holder {
+            h1 {
+                background-color: $color_1;
+                padding: 10px;
+            }
+
+            .group-holder {
+                display: inline-block;
+                vertical-align: top;
+                padding: 10px;
+                width: 50%;
+
+                @include small{
+                    width: 25%;
+                }
+
+                .block-holder {
+                    padding: 5px;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $color_1;
+                    }
+                }
+            }
         }
     }
 
