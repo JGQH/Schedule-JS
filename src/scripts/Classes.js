@@ -38,9 +38,9 @@ const Classes = () => {
         </div>
         <div className="classes-selector">
           <select onChange={evt => changeGroups(evt.target.value)}>
-            {(() => mapJson(classesData[className], (name, index) => {
-                return <option key={index} value={index}>{name}</option>
-              }))()}
+            {mapJson(classesData[className], (name, index) => (
+                <option key={index} value={index}>{name}</option>
+              ))}
           </select>
         </div>
       </div>

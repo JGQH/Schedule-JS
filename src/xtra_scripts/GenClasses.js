@@ -10,10 +10,8 @@ let data, counter, jgroups, jlists;
     ~jlists {list}: Contains all the combination of courses (classes + group) that are valid
 */
 function generateSchedules(selecting) {
-    prepareSchedules(selecting);
+    if(prepareSchedules(selecting)) return []; //Exits if no block was selected
     setGeneral();
-
-    if(counter == 1) return []; //Line break, stub for fixing this in the loop
     
     do {
         checkGroups()
@@ -41,7 +39,9 @@ function prepareSchedules(selecting) {
         if(sizeJson(selectedGroups) > 0) { //If no groups were selected, it is not added to the data
             data[className] = selectedGroups
         }
-    })
+    });
+
+    return sizeJson(data) == 0;
 }
 
 /**

@@ -1,7 +1,7 @@
 import SvgSchedule from '../xtra_scripts/SvgSchedule';
 import DispClasses from '../xtra_scripts/DispSelectors';
 import { generateSchedules } from '../xtra_scripts/GenClasses'
-import { getSelectors, getSchedules, saveSchedule } from './Utilities';
+import { getSelectors, getSchedules, saveSchedule, sizeJson } from './Utilities';
 import { useState } from 'react';
 
 const Generate = () => {
@@ -29,20 +29,20 @@ const Generate = () => {
           <button onClick={() => isSelecting(true)}>Seleccionar Clases</button>
         </div>
         <div className="schedule-selector">
-          <button onClick={() => isSelecting(false)}>Ver Horarios</button>
+          <button onClick={() => isSelecting(false)}>Visualizar Horarios</button>
         </div>
       </div>
       <div className="schedule-container-visual">
         {selecting ?
-        <>
-          <DispClasses states={states} setState={setState} />
-        </>
+          ((sizeJson(states) == 0) ?
+            <h1 style={{textAlign:"center"}}>No hay bloques para mostrar</h1>
+            :
+            <DispClasses states={states} setState={setState} />
+          )
         :
         <>
           {(schedules.length == 0) ?
-          <>
-            <h1 style={{textAlign:"center"}}>No hay horarios para mostrar</h1>
-          </>
+          <h1 style={{textAlign:"center"}}>No hay horarios para mostrar</h1>
           :
           <div className="schedule-visualizer">
             <SvgSchedule schedules={schedules} />
