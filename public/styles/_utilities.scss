@@ -45,6 +45,21 @@ $color_5: #ffe2c6;
     }
 }
 
+@mixin arrow($angle1, $angle2){
+    background-image: url("../imgs/Arrow.png");
+    background-size: cover;
+    transform: rotate($angle2);
+    @include small {
+        transform: rotate($angle1);
+    }
+    opacity: 0.5;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+}
+
 @mixin blur($val){
     -webkit-filter: blur($val);
     -moz-filter: blur($val);

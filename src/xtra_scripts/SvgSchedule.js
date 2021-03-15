@@ -75,8 +75,8 @@ const SvgSchedule = ({schedules = []}) => {
                 })}
             </svg>
         </div>
-        <div className="schedule-arrow-prev" onClick={() => setSchedule(index - 1)}>prev</div>
-        <div className="schedule-arrow-next" onClick={() => setSchedule(index + 1)}>next</div>
+        <div className="schedule-arrow-prev" onClick={() => setSchedule(index - 1)}></div>
+        <div className="schedule-arrow-next" onClick={() => setSchedule(index + 1)}></div>
     </>)
 }
 
