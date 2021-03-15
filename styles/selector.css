@@ -1,0 +1,51 @@
+/* Palette "CP_RUST-5", taken from "https://lospec.com/palette-list/cp_rust-5" */
+.selector-container {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+@media only screen and (min-width: 600px) {
+  .selector-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.selector-container .selector-option {
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 5px 5px 7px #712f30;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #712f30;
+  border-radius: 5px;
+  width: 60%;
+}
+@media only screen and (min-width: 600px) {
+  .selector-container .selector-option {
+    position: relative;
+    top: 0;
+    right: 0;
+    transition: all 0.25s ease;
+    width: 65%;
+  }
+  .selector-container .selector-option:hover {
+    cursor: pointer;
+    top: -3px;
+    right: 3px;
+    box-shadow: 11px 11px 3px #712f30;
+  }
+}
+.selector-container .selector-arrow-left, .selector-container .selector-arrow-right {
+  width: 20%;
+  aspect-ratio: 1;
+}
+.selector-container .selector-arrow-right {
+  transform: scaleX(-1);
+  -ms-filter: fliph;
+  filter: fliph;
+}/*# sourceMappingURL=selector.css.map */

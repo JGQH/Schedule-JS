@@ -1,0 +1,59 @@
+@use "./utilities" as *;
+
+.selector-container {
+    @include flex-box;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    @include small{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .selector-option {
+        padding: 10px;
+        margin: 10px;
+        box-shadow: 5px 5px 7px $color_1;
+
+        border:{
+            width: 2px;
+            style: solid;
+            color: $color_1;
+            radius: 5px;
+        }
+
+        @include small{
+            position: relative;
+            top: 0;
+            right: 0;
+            transition: all .25s ease;
+            width: 65%;
+
+            &:hover {
+                $diff: 3px;
+                cursor: pointer;
+                top: -$diff;
+                right: $diff;
+                box-shadow: (5px + 2*$diff) (5px + 2*$diff) 3px $color_1;
+            }
+        }
+
+        width: 60%;
+    }
+
+    .selector-arrow {
+        &-left, &-right{
+            width:20%;
+            aspect-ratio: 1;
+        }
+
+        &-right{
+            -moz-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            transform: scaleX(-1);
+            -ms-filter: fliph;
+            filter: fliph;
+        }
+    }
+}
