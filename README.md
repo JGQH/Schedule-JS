@@ -25,9 +25,8 @@ This project is a practice for introduction to SASS/SCSS and getting it to work 
 
 | Courses | Schedules |
 |:---:|:---:|
-|![Courses](./readme/img_03.png)| *Not Finished Yet* |
+|![Courses](./readme/img_03.png)| *No image yet* |
 
 
 ## To-Do
-- Complete schedules' visualization
-- Add way to remove blocks
+- Publish in github pages
