@@ -24,7 +24,7 @@ const Classes = () => {
 
   return (
     (classesNames.length == 0) ?
-    <h1>No se ha ingresado ninguna clase</h1>
+    <h1 style={{textAlign:"center"}}>No se ha ingresado ninguna clase</h1>
     :
     <>
       <h1>Clases</h1>

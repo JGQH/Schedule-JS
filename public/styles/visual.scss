@@ -4,6 +4,8 @@
     @include flex-box;
     flex-direction: column;
     align-items: center;
+    height: auto;
+    overflow: auto;
 
     @include small {
         justify-content: center;
