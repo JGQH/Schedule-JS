@@ -45,7 +45,32 @@
   aspect-ratio: 1;
 }
 .selector-container .selector-arrow-right {
-  transform: scaleX(-1);
-  -ms-filter: fliph;
-  filter: fliph;
+  background-image: url("../imgs/Arrow.png");
+  background-size: cover;
+  transform: rotate(0);
+  opacity: 0.5;
+}
+@media only screen and (min-width: 600px) {
+  .selector-container .selector-arrow-right {
+    transform: rotate(0);
+  }
+}
+.selector-container .selector-arrow-right:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.selector-container .selector-arrow-left {
+  background-image: url("../imgs/Arrow.png");
+  background-size: cover;
+  transform: rotate(180deg);
+  opacity: 0.5;
+}
+@media only screen and (min-width: 600px) {
+  .selector-container .selector-arrow-left {
+    transform: rotate(0);
+  }
+}
+.selector-container .selector-arrow-left:hover {
+  cursor: pointer;
+  opacity: 1;
 }/*# sourceMappingURL=selector.css.map */
