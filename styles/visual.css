@@ -218,8 +218,12 @@
   aspect-ratio: 1;
 }
 .visual-container .schedule-container-visual .schedule-visualizer .schedule-arrow-prev {
-  background-image: url("../imgs/Arrow.png");
+  background: url("../imgs/Arrow.png");
   background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   transform: rotate(-180deg);
   opacity: 0.5;
   grid-area: arrowp;
@@ -234,8 +238,12 @@
   opacity: 1;
 }
 .visual-container .schedule-container-visual .schedule-visualizer .schedule-arrow-next {
-  background-image: url("../imgs/Arrow.png");
+  background: url("../imgs/Arrow.png");
   background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   transform: rotate(0);
   opacity: 0.5;
   grid-area: arrown;

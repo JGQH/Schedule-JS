@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Schedule-JS/static/js/main.7d350122.chunk.js",
-    "main.js.map": "/Schedule-JS/static/js/main.7d350122.chunk.js.map",
+    "main.js": "/Schedule-JS/static/js/main.49900684.chunk.js",
+    "main.js.map": "/Schedule-JS/static/js/main.49900684.chunk.js.map",
     "runtime-main.js": "/Schedule-JS/static/js/runtime-main.f7ab357b.js",
     "runtime-main.js.map": "/Schedule-JS/static/js/runtime-main.f7ab357b.js.map",
     "static/js/2.53cbd7ee.chunk.js": "/Schedule-JS/static/js/2.53cbd7ee.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.f7ab357b.js",
     "static/js/2.53cbd7ee.chunk.js",
-    "static/js/main.7d350122.chunk.js"
+    "static/js/main.49900684.chunk.js"
   ]
 }

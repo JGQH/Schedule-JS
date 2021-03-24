@@ -46,8 +46,13 @@ $color_5: #ffe2c6;
 }
 
 @mixin arrow($angle1, $angle2){
-    background-image: url("../imgs/Arrow.png");
+    background: url("../imgs/Arrow.png");
     background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    
     transform: rotate($angle2);
     @include small {
         transform: rotate($angle1);
