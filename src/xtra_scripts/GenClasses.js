@@ -107,7 +107,7 @@ function checkGroups() {
             const block = blocks[i];
             const dayBlocks = schedule[block.Day];
 
-            if(!checkBlocks(dayBlocks, block)) return;
+            if(checkBlocks(dayBlocks, block)) return;
         }
     }
 
@@ -122,18 +122,18 @@ function checkGroups() {
  * @returns {boolean} Returns if the block is valid
  */
 function checkBlocks(day, block1) {
-    const [startHour1, endHour1] = [block1.Start, block1.End];
+    const [startHour1, endHour1] = [parseInt(block1.Start), parseInt(block1.End)];
 
     for(let i = 0; i < day.length; i++){
         const block2 = day[i];
-        const [startHour2, endHour2] = [block2.Start, block2.End]; //Gets a block of the current day
+        const [startHour2, endHour2] = [parseInt(block2.Start), parseInt(block2.End)]; //Gets a block of the current day
 
-        if(!((startHour2 > endHour1) || (startHour1 > endHour2))) return false; //If not ("block2 starts after block1 ends" or "block1 starts after block2 ends"), it intersects, so return False.
+        if(!((startHour2 > endHour1) || (startHour1 > endHour2))) return true; //If not ("block2 starts after block1 ends" or "block1 starts after block2 ends"), it intersects, so return True.
     }
 
-    //If we reached this point, the block is valid, therefore push to array of the day and return True
+    //If we reached this point, the block is valid, therefore push to array of the day and return False
     day.push(block1);
-    return true;
+    return false;
 }
 
 export { generateSchedules };
