@@ -1,0 +1,17 @@
+@use 'styles/utilities' as *;
+
+.blocksNavbar {
+    width: 75%;
+    
+    .blocksOption {
+        padding: 10px;;
+        display: inline-block;
+        width: 50%;
+
+        button {
+            width: 100%;
+            padding: 10px;
+            @include styles_clicker;
+        }
+    }
+}

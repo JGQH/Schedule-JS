@@ -1,0 +1,29 @@
+@use 'styles/utilities' as *;
+
+.scheduleContent {
+    width: 87.5%;
+    overflow-y: auto;
+    text-align: center;
+
+    .scheduleVisualizer {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas:
+        "schedule schedule schedule"
+        "arrowp courses arrown";
+
+        @include small {
+            grid-template-columns: 2fr 5fr 2fr;
+            grid-template-areas:
+            "courses schedule arrowp"
+            "courses schedule null"
+            "courses schedule arrown";
+        }
+    }
+
+    button {
+        padding: 10px;
+        margin: 10px;
+        @include styles_clicker;
+    }
+}

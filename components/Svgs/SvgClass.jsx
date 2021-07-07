@@ -1,8 +1,9 @@
 import { startHours, endHours, weekDays } from '../../utilities/ScheduleTime'
+import styles from './SvgClass.module.scss'
 
 const SvgClass = ({blocks = []}) => {
     return (
-        <svg width='100%' height='100%' viewBox='0 0 600 544' preserveAspectRatio='xMaxYMax'>
+        <svg width='100%' height='100%' viewBox='0 0 600 544' preserveAspectRatio='xMaxYMax' className={styles.svgClass}>
             <pattern id='grid' width='100' height='32' patternUnits='userSpaceOnUse'>
                 <path d='M 0 0 L 100 0 L 100 32 L 0 32 Z' fill='none' strokeWidth='0.25'/>
             </pattern>
@@ -36,7 +37,7 @@ const SvgClass = ({blocks = []}) => {
 
                 return <rect
                         key={index}
-                        className='class-block'
+                        className={styles.svgBlock}
                         x={day * 100}
                         y={(start + 1) * 32}
                         width={100}

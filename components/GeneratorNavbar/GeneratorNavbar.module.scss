@@ -1,0 +1,21 @@
+@use 'styles/utilities' as *;
+
+.scheduleNavbar {
+    width: 75%;
+    
+    .scheduleOption {
+        display: inline-block;
+        width: 50%;
+        margin: auto 0;
+        padding: 20px;
+
+        button {
+            width: 100%;
+            padding: 10px;
+
+            border-radius: 5px;
+
+            @include styles_clicker;
+        }
+    }
+}

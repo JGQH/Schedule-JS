@@ -4,6 +4,7 @@ import BlockNavbar from '../../../components/BlockNavbar/BlockNavbar'
 import { getClasses, deleteClasses } from '../../../utilities/StorageManager'
 import { getDay } from '../../../utilities/ScheduleTime'
 import { mapJson } from '../../../utilities/JsonManager'
+import styles from './Blocks.module.scss'
 
 export default function BlockDeleter() {
     const [classes, setClasses] = useState(getClasses())
@@ -25,26 +26,26 @@ export default function BlockDeleter() {
         <Navbar tab={1} />
         <div className='visual-container'>
             <BlockNavbar isCreate={false} />
-            <div className='blocks-manager'>
+            <div className={styles.blocksManager}>
                 {mapJson(classes, (className, classIndex) => {
                     const currentClass = classes[className]
 
                     //Loop through all the classes
                     return (
-                    <div key={classIndex} className='class-holder'>
+                    <div key={classIndex} className={styles.classHolder}>
                         <h1>{className}</h1>
                         {mapJson(currentClass, (groupName, groupIndex) => {
                             const currentGroup = currentClass[groupName]
 
                             //Loop through all the groups of each class
                             return (
-                            <div key={groupIndex} className='group-holder'>
+                            <div key={groupIndex} className={styles.groupHolder}>
                                 <h3>{groupName}</h3>
                                 {currentGroup.map((block, blockIndex) => {
 
                                     //Loop through all the blocks of each group
                                     return (
-                                    <p key={blockIndex} className='block-holder' onClick={() => deleteBlock(className, groupName, blockIndex)}>
+                                    <p key={blockIndex} className={styles.blockHolder} onClick={() => deleteBlock(className, groupName, blockIndex)}>
                                         {getDay(block.Day, block.Start, block.End)}
                                     </p>)
                                 })}

@@ -1,4 +1,4 @@
-@use "./utilities" as *;
+@use './utilities' as *;
 
 * {
     margin: 0;
@@ -22,7 +22,7 @@ body {
         flex-direction: row;
 
         $distribution: 30%;
-        .selector-container {
+        .navbarContainer {
             width: $distribution;
         }
 

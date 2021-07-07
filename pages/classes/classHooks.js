@@ -29,7 +29,7 @@ export function useClass() {
 
     //Sets a className when component is mounted
     useEffect(() => {
-        setter('name', classesList[0])
+        setter('name', 0)
     }, [])
 
     const blockList = classesStorage[currentClass] && classesStorage[currentClass][currentGroup]

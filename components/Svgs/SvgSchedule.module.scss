@@ -1,0 +1,25 @@
+@use 'styles/utilities' as *;
+
+.svgCourses {
+    grid-area: courses;
+}
+
+.svgGraph {
+    grid-area: schedule;
+}
+
+.svgArrow {
+    &Prev, &Next {
+        aspect-ratio: 1;
+    }
+
+    &Prev {
+        @include arrow(-90deg, -180deg);
+        grid-area: arrowp;
+    }
+
+    &Next {
+        @include arrow(90deg, 0);
+        grid-area: arrown;
+    }
+}

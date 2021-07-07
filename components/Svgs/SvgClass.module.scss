@@ -1,0 +1,15 @@
+@use 'styles/utilities' as *;
+
+.svgClass {
+    path {
+        stroke: $color_5;
+    }
+
+    text {
+        fill: $color_5;
+    }
+
+    .svgBlock {
+        fill: $color_2;
+    }
+}

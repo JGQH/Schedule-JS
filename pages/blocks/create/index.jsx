@@ -4,17 +4,22 @@ import { useBlock, uploadBlock } from './blockHooks'
 import { startHours, endHours, weekDays } from '../../../utilities/ScheduleTime'
 import { getClasses } from '../../../utilities/StorageManager'
 import { mapJson } from '../../../utilities/JsonManager'
+import styles from './Blocks.module.scss'
 
 export default function BlockCreator() {
     const [block, setter] = useBlock()
+
+    function doUpload() {
+        uploadBlock(block)
+    }
 
     return (
     <>
         <Navbar tab={1} />
         <div className='visual-container'>
             <BlockNavbar isCreate={true} />
-            <div className='blocks-form'>
-                <div className='blocks-input'>
+            <div className={styles.blocksForm}>
+                <div className={styles.blocksInput}>
                     <div>
                         <label>Clase:</label>
                     </div>
@@ -27,7 +32,7 @@ export default function BlockCreator() {
                         </datalist>
                     </div>
                 </div>
-                <div className='blocks-input'>
+                <div className={styles.blocksInput}>
                     <div>
                         <label>Grupo:</label>
                     </div>
@@ -35,7 +40,7 @@ export default function BlockCreator() {
                         <input type='text' placeholder='Exm: A' onChange={evt => setter('group', evt.target.value)} maxLength={1}/>
                     </div>
                 </div>
-                <div className='blocks-input'>
+                <div className={styles.blocksInput}>
                     <div>
                         <label>Día de la semana:</label>
                     </div>
@@ -47,7 +52,7 @@ export default function BlockCreator() {
                         </select>
                     </div>
                 </div>
-                <div className='blocks-input'>
+                <div className={styles.blocksInput}>
                     <div>
                         <label>Inicio del bloque:</label>
                     </div>
@@ -59,7 +64,7 @@ export default function BlockCreator() {
                         </select>
                     </div>
                 </div>
-                <div className='blocks-input'>
+                <div className={styles.blocksInput}>
                     <div>
                         <label>Final del bloque:</label>
                     </div>
@@ -71,7 +76,7 @@ export default function BlockCreator() {
                         </select>
                     </div>
                 </div>
-                <button className='blocks-submit' onClick={() => uploadBlock(block)}>Guardar bloque</button>
+                <button className={styles.blocksSubmit} onClick={doUpload}>Guardar bloque</button>
             </div>
         </div>
     </>)

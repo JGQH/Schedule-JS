@@ -1,0 +1,40 @@
+@use 'styles/utilities' as *;
+
+.blocksManager {
+    width: 75%;
+    height: 60%;
+
+    @include small {
+        height: 75%;
+    }
+
+    overflow-y: auto;
+    text-align: center;
+
+    .classHolder {
+        h1 {
+            background-color: $color_1;
+            padding: 10px;
+        }
+
+        .groupHolder {
+            display: inline-block;
+            vertical-align: top;
+            padding: 10px;
+            width: 50%;
+
+            @include small{
+                width: 25%;
+            }
+
+            .blockHolder {
+                padding: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $color_1;
+                }
+            }
+        }
+    }
+}

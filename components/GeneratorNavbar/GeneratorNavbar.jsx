@@ -1,4 +1,5 @@
 import Router from 'next/router'
+import styles from './GeneratorNavbar.module.scss'
 
 export default function GeneratorNavbar() {
     function goSelect() {
@@ -10,11 +11,11 @@ export default function GeneratorNavbar() {
     }
 
     return (
-    <div className='schedule-container-selector'>
-        <div className='schedule-selector'>
+    <div className={styles.scheduleNavbar}>
+        <div className={styles.scheduleOption}>
             <button onClick={goSelect}>Seleccionar Clases</button>
         </div>
-        <div className='schedule-selector'>
+        <div className={styles.scheduleOption}>
             <button onClick={goView}>Visualizar Horarios</button>
         </div>
     </div>)

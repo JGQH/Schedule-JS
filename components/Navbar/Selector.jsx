@@ -1,6 +1,8 @@
+import styles from './Navbar.module.scss'
+
 const Selector = ({ text, onClick }) => {
     return (
-        <div className="selector-option" onClick={() => onClick && onClick()}>
+        <div className={styles.navOption} onClick={() => onClick && onClick()}>
             <h4>{text.toUpperCase()}</h4>
         </div>
     );

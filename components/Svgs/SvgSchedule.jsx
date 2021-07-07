@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { mapJson, sizeJson } from '../../utilities/JsonManager'
-import { startHours, endHours, weekDays } from '../../utilities/ScheduleTime';
+import { startHours, endHours, weekDays } from '../../utilities/ScheduleTime'
+import styles from './SvgSchedule.module.scss'
 
 function getHex(val = 2){
     return val.toString(16).padStart(2, '0');
@@ -41,13 +42,13 @@ const SvgSchedule = ({schedules = []}) => {
 
     return (
     <>
-        <div className='schedule-courses'>
+        <div className={styles.svgCourses}>
             <h3 >Horario {index + 1}/{schedules.length}</h3>
             {mapJson(schedules[index], (courseName, key) => {
                 return <p key={key} style={{color:findColor(key)}}>{courseName}</p>
             })}
         </div>
-        <div className='schedule-graph'>
+        <div className={styles.svgGraph}>
             <svg width='100%' height='100%' viewBox='0 0 600 544' preserveAspectRatio='xMaxYMax'>
                 <pattern id='grid' width='100' height='32' patternUnits='userSpaceOnUse'>
                     <path d='M 0 0 L 100 0 L 100 32 L 0 32 Z' fill='#ffffff' strokeWidth='0.25' stroke='#000000'/>
@@ -93,8 +94,8 @@ const SvgSchedule = ({schedules = []}) => {
                 })}
             </svg>
         </div>
-        <div className='schedule-arrow-prev' onClick={() => setSchedule(index - 1)}></div>
-        <div className='schedule-arrow-next' onClick={() => setSchedule(index + 1)}></div>
+        <div className={styles.svgArrowPrev} onClick={() => setSchedule(index - 1)}></div>
+        <div className={styles.svgArrowNext} onClick={() => setSchedule(index + 1)}></div>
     </>)
 }
 

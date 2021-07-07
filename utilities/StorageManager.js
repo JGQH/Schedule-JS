@@ -1,14 +1,14 @@
 import { sizeJson, loopJson } from './JsonManager'
 
 function getLocalStorage(key) {
-    if(typeof window !== "undefined") {
+    if(typeof window !== 'undefined') {
         return JSON.parse(localStorage.getItem(key) || '{}')
     }
     return {}
 }
 
 function setLocalStorage(key, data) {
-    if(typeof window !== "undefined") {
+    if(typeof window !== 'undefined') {
         const value = JSON.stringify(data)
         localStorage.setItem(key, value)
     }
@@ -27,12 +27,13 @@ export function saveClasses(className, groupName, block) {
     const classStorage = getClasses()
 
     //Getting specific group for a class
-    const currentGroups = classStorage[className]
-    const currentBlocks = currentGroups[groupName] || [];
+    const currentGroups = classStorage[className] || {}
+    const currentBlocks = currentGroups[groupName] || []
 
     //Stores the new block in the group
     currentBlocks.push(block)
-    currentGroups[className] = currentBlocks
+    currentGroups[groupName] = currentBlocks
+    classStorage[className] = currentGroups
 
     //Saves the modification of the class
     setClasses(classStorage)
@@ -93,7 +94,7 @@ export function getSelectors() {
 
                 //Set the list of checked groups
                 selectorsStorage[className] = groupData
-            });
+            })
 
             localStorage.setItem('prev-classes', currentClasses)
             setSelectors(selectorsStorage)

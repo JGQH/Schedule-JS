@@ -1,0 +1,24 @@
+@use 'styles/utilities' as *;
+
+.checkerManager {
+    width: 50%;
+    padding: 15px;
+
+    @include small {
+        width: 33%;
+    }
+
+    display: inline-flex;
+    flex-direction: column;
+
+    .checkerClass {
+        padding: 10px;
+        border: 1px solid $color_2;
+        border-radius: 10px;
+        background-color: $color_1;
+    }
+
+    .checkerGroups {
+        padding: 10px;
+    }
+}
