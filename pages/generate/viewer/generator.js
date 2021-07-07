@@ -1,12 +1,13 @@
-import { getClasses, loopJson, sizeJson } from '../scripts/Utilities'
+import { getClasses } from '../../../utilities/StorageManager'
+import { loopJson, sizeJson } from '../../../utilities/JsonManager'
 
-/* NOTE: This algorithm is basically brute force, so it will check all the possibilities, which can result in a slow "creation" time (Also, not precisely optimized) */
+/* NOTE: This algorithm is basically brute force, so it will check all the possibilities, which can result in a slow 'creation' time (Also, not precisely optimized) */
 
 let data, counter, jgroups, jlists;
 /*
     ~data {json}: Contains all blocks that were selected
     ~counter {number}: Amount of possibilities that the algorithm will go through, used to determine when to stop the loop
-    ~jgroups {json}: Contains the "group index" of each class, which allows us to easily loop through each group of every class
+    ~jgroups {json}: Contains the 'group index' of each class, which allows us to easily loop through each group of every class
     ~jlists {list}: Contains all the combination of courses (classes + group) that are valid
 */
 function generateSchedules(selecting) {
@@ -68,7 +69,7 @@ function loopGroups() {
     const classNames = Object.keys(jgroups)
     for(let i = 0; i < classNames.length; i++){
         const className = classNames[i]
-        const igroup = jgroups[className] + 1; //From every class, we add 1 to the current "index" of the group
+        const igroup = jgroups[className] + 1; //From every class, we add 1 to the current 'index' of the group
 
         if(igroup == Object.keys(data[className]).length){  //If we reached the limit, it goes back to 0
             jgroups[className] = 0;
@@ -77,7 +78,7 @@ function loopGroups() {
             break;
         }
 
-        /* NOTE: The reason it only breaks when not going back to 0 is that, if this group reached the limit, then the next group has to go trough this same process. Therefore, this repetition should only break if the "group index" hasn't reached it's limit */
+        /* NOTE: The reason it only breaks when not going back to 0 is that, if this group reached the limit, then the next group has to go trough this same process. Therefore, this repetition should only break if the 'group index' hasn't reached it's limit */
     }
 
     counter--; //One more combination checked
@@ -122,13 +123,13 @@ function checkGroups() {
  * @returns {boolean} Returns if the block is valid
  */
 function checkBlocks(day, block1) {
-    const [startHour1, endHour1] = [parseInt(block1.Start), parseInt(block1.End)];
+    const [startHour1, endHour1] = [+block1.Start, +block1.End];
 
     for(let i = 0; i < day.length; i++){
         const block2 = day[i];
-        const [startHour2, endHour2] = [parseInt(block2.Start), parseInt(block2.End)]; //Gets a block of the current day
+        const [startHour2, endHour2] = [+block2.Start, +block2.End]; //Gets a block of the current day
 
-        if(!((startHour2 > endHour1) || (startHour1 > endHour2))) return true; //If not ("block2 starts after block1 ends" or "block1 starts after block2 ends"), it intersects, so return True.
+        if(!((startHour2 > endHour1) || (startHour1 > endHour2))) return true; //If not ('block2 starts after block1 ends' or 'block1 starts after block2 ends'), it intersects, so return True.
     }
 
     //If we reached this point, the block is valid, therefore push to array of the day and return False

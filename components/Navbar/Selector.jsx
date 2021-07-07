@@ -6,4 +6,4 @@ const Selector = ({ text, onClick }) => {
     );
 }
 
-export default Selector;
+export default Selector
