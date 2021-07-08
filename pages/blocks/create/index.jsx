@@ -1,9 +1,9 @@
-import Navbar from '../../../components/Navbar/Navbar'
-import BlockNavbar from '../../../components/BlockNavbar/BlockNavbar'
+import Navbar from '@Components/Navbar'
+import BlockNavbar from '@Components/BlockNavbar'
+import { startHours, endHours, weekDays } from '@Utilities/ScheduleTime'
+import { getClasses } from '@Utilities/StorageManager'
+import { mapJson } from '@Utilities/JsonManager'
 import { useBlock, uploadBlock } from './blockHooks'
-import { startHours, endHours, weekDays } from '../../../utilities/ScheduleTime'
-import { getClasses } from '../../../utilities/StorageManager'
-import { mapJson } from '../../../utilities/JsonManager'
 import styles from './Blocks.module.scss'
 
 export default function BlockCreator() {

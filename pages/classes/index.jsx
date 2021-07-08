@@ -1,5 +1,5 @@
-import Navbar from '../../components/Navbar/Navbar'
-import SvgClass from '../../components/Svgs/SvgClass'
+import Navbar from '@Components/Navbar'
+import SvgClass from '@Components/SvgClass'
 import { useClass } from './classHooks'
 import styles from './Classes.module.scss'
 

@@ -1,4 +1,4 @@
-import { mapJson } from '../../utilities/JsonManager'
+import { mapJson } from '@Utilities/JsonManager'
 import styles from './DispSelectors.module.scss'
 
 const DispGroups = ({ states, className, setState }) => {

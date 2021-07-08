@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getSelectors, setSelectors } from '../../../utilities/StorageManager'
+import { getSelectors, setSelectors } from '@Utilities/StorageManager'
 
 export function useSelectors() {
     const [states, setStates] = useState(getSelectors())

@@ -1,6 +1,6 @@
-import Navbar from '../../../components/Navbar/Navbar'
-import GeneratorNavbar from '../../../components/GeneratorNavbar/GeneratorNavbar'
-import SvgSchedule from '../../../components/Svgs/SvgSchedule'
+import Navbar from '@Components/Navbar'
+import GeneratorNavbar from '@Components/GeneratorNavbar'
+import SvgSchedule from '@Components/SvgSchedule'
 import { useSchedules } from './viewerHooks'
 import styles from '../Generator.module.scss'
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { generateSchedules } from './generator'
-import { getSchedules, saveSchedules, getSelectors } from '../../../utilities/StorageManager'
+import { getSchedules, saveSchedules, getSelectors } from '@Utilities/StorageManager'
 
 export function useSchedules() {
     const [schedules, setSchedules] = useState(getSchedules())

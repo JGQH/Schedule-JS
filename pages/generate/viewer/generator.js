@@ -1,5 +1,5 @@
-import { getClasses } from '../../../utilities/StorageManager'
-import { loopJson, sizeJson } from '../../../utilities/JsonManager'
+import { getClasses } from '@Utilities/StorageManager'
+import { loopJson, sizeJson } from '@Utilities/JsonManager'
 
 /* NOTE: This algorithm is basically brute force, so it will check all the possibilities, which can result in a slow 'creation' time (Also, not precisely optimized) */
 

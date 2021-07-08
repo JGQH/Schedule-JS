@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Navbar from '../../../components/Navbar/Navbar'
-import BlockNavbar from '../../../components/BlockNavbar/BlockNavbar'
-import { getClasses, deleteClasses } from '../../../utilities/StorageManager'
-import { getDay } from '../../../utilities/ScheduleTime'
-import { mapJson } from '../../../utilities/JsonManager'
+import Navbar from '@Components/Navbar'
+import BlockNavbar from '@Components/BlockNavbar'
+import { getClasses, deleteClasses } from '@Utilities/StorageManager'
+import { getDay } from '@Utilities/ScheduleTime'
+import { mapJson } from '@Utilities/JsonManager'
 import styles from './Blocks.module.scss'
 
 export default function BlockDeleter() {

@@ -1,5 +1,5 @@
-import Navbar from '../components/Navbar/Navbar'
-import styles from '../styles/Landpage.module.scss'
+import Navbar from '@Components/Navbar'
+import styles from 'styles/Landpage.module.scss'
 
 export default function Home() {
     return (

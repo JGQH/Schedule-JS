@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { mapJson, sizeJson } from '../../utilities/JsonManager'
-import { startHours, endHours, weekDays } from '../../utilities/ScheduleTime'
+import { mapJson, sizeJson } from '@Utilities/JsonManager'
+import { startHours, endHours, weekDays } from '@Utilities/ScheduleTime'
 import styles from './SvgSchedule.module.scss'
 
 function getHex(val = 2){

@@ -1,4 +1,4 @@
-import { startHours, endHours, weekDays } from '../../utilities/ScheduleTime'
+import { startHours, endHours, weekDays } from '@Utilities/ScheduleTime'
 import styles from './SvgClass.module.scss'
 
 const SvgClass = ({blocks = []}) => {

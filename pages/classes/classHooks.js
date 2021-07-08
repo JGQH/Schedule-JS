@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { getClasses } from '../../utilities/StorageManager';
-import { keyJson } from '../../utilities/JsonManager'
+import { getClasses } from '@Utilities/StorageManager';
+import { keyJson } from '@Utilities/JsonManager'
 
 export function useClass() {
     const classesStorage = getClasses()

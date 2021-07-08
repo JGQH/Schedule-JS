@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@Components/*":[
+                "components/BlockNavbar/*",
+                "components/DispSelectors/*",
+                "components/GeneratorNavbar/*",
+                "components/Navbar/*",
+                "components/Svgs/*"
+            ],
+            "@Utilities/*":[
+                "utilities/*"
+            ]
+        }
+    }
+}

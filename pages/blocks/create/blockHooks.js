@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { getDay } from '../../../utilities/ScheduleTime';
-import { saveClasses } from '../../../utilities/StorageManager'
+import { getDay } from '@Utilities/ScheduleTime';
+import { saveClasses } from '@Utilities/StorageManager'
 
 export function useBlock() {
     const [blockClass, setClass] = useState('');
