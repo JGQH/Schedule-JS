@@ -1,38 +1,36 @@
 @use 'styles/utilities' as *;
 
-.blocksManager {
-    width: 75%;
-    height: 60%;
-
-    @include small {
-        height: 75%;
-    }
-
-    overflow-y: auto;
-    text-align: center;
-
-    .classHolder {
-        h1 {
-            background-color: $color_1;
-            padding: 10px;
+.blocksContainer {
+    .blocksManager {
+        @include small {
+            height: 75%;
         }
 
-        .groupHolder {
-            display: inline-block;
-            vertical-align: top;
-            padding: 10px;
-            width: 50%;
+        text-align: center;
 
-            @include small{
-                width: 25%;
+        .classHolder {
+            h1 {
+                background-color: $color_1;
+                padding: 10px;
             }
 
-            .blockHolder {
-                padding: 5px;
+            .groupHolder {
+                display: inline-block;
+                vertical-align: top;
+                padding: 10px;
+                width: 50%;
 
-                &:hover {
-                    cursor: pointer;
-                    background-color: $color_1;
+                @include small{
+                    width: 25%;
+                }
+
+                .blockHolder {
+                    padding: 5px;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $color_1;
+                    }
                 }
             }
         }

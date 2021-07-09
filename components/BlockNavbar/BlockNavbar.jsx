@@ -11,15 +11,15 @@ export default function BlockNavbar({ isCreate }) {
     }
 
     return (
-    <>
-        <h1>{isCreate ? 'Crear Bloques' : 'Eliminar Bloques'}</h1>
-        <div className={styles.blocksNavbar}>
-            <div className={styles.blocksOption}>
-                <button onClick={goCreate}>Crear Bloques</button>
-            </div>
-            <div className={styles.blocksOption}>
-                <button onClick={goDelete}>Eliminar Bloques</button>
-            </div>
+    <div className={styles.blocksNavbar}>
+        <div className={styles.bnavTitle}>
+            <h1>{isCreate ? 'Crear Bloques' : 'Eliminar Bloques'}</h1>
         </div>
-    </>)
+        <div id={styles.bnavCreate} className={styles.bnavOption}>
+            <button onClick={goCreate}>Crear Bloques</button>
+        </div>
+        <div id={styles.bnavDelete} className={styles.bnavOption}>
+            <button onClick={goDelete}>Eliminar Bloques</button>
+        </div>
+    </div>)
 }

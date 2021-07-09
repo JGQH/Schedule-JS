@@ -5,7 +5,7 @@ const DispGroups = ({ states, className, setState }) => {
     //Create list of groups for each class
     return mapJson(states[className], (groupName, index) => (
         <div key={index}>
-            <label>{groupName}</label>
+            <label>{groupName} </label>
             <input type='checkbox' onChange={e => setState(className, groupName, e.target.checked)} checked={states[className][groupName]} />
         </div>
     ))

@@ -41,7 +41,7 @@ const SvgSchedule = ({schedules = []}) => {
     }, [schedules]);
 
     return (
-    <>
+    <div className={styles.scheduleVisualizer}>
         <div className={styles.svgCourses}>
             <h3 >Horario {index + 1}/{schedules.length}</h3>
             {mapJson(schedules[index], (courseName, key) => {
@@ -94,9 +94,13 @@ const SvgSchedule = ({schedules = []}) => {
                 })}
             </svg>
         </div>
-        <div className={styles.svgArrowPrev} onClick={() => setSchedule(index - 1)}></div>
-        <div className={styles.svgArrowNext} onClick={() => setSchedule(index + 1)}></div>
-    </>)
+        <div className={styles.svgArrowPrev} onClick={() => setSchedule(index - 1)}>
+            <h1>◄</h1>
+        </div>
+        <div className={styles.svgArrowNext} onClick={() => setSchedule(index + 1)}>
+            <h1>►</h1>
+        </div>
+    </div>)
 }
 
 export default SvgSchedule;

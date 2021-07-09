@@ -1,47 +1,47 @@
 @use 'styles/utilities' as *;
 
-.blocksForm {
-    width: 75%;
-    background-color: $color_1;
-    border-radius: 10px;
-    padding: 20px;
-
-    .blocksInput {
-        width: 100%;
+.blocksContainer {     
+    .blocksForm {
+        background-color: $color_1;
+        border-radius: 10px;
         padding: 10px;
 
-        & > div {
-            display: inline-block;
-            width: 50%;
-        }
-
-        input, select{
-            background-color: $color_0;
-            border-color: $color_2;
-
-            color: $color_5;
-            border-radius: 5px;
+        .blocksInput {
             width: 100%;
             padding: 10px;
+
+            & > div {
+                display: inline-block;
+                width: 50%;
+            }
+
+            input, select{
+                background-color: $color_0;
+                border-color: $color_2;
+
+                color: $color_5;
+                border-radius: 5px;
+                width: 100%;
+                padding: 10px;
+            }
         }
-    }
 
-    .blocksSubmit {
-        
-        border-radius: 15px;
-        border-color: $color_2;
-        background-color: $color_2;
-        color: $color_0;
-        transition: all .25s ease;
-        font-size: medium;
+        .blocksSubmit {
+            border-radius: 15px;
+            border-color: $color_2;
+            background-color: $color_2;
+            color: $color_0;
+            transition: all .25s ease;
+            font-size: medium;
 
-        &:hover {
-            cursor: pointer;
-            background-color: $color_0;
-            color: $color_2;
+            &:hover {
+                cursor: pointer;
+                background-color: $color_0;
+                color: $color_2;
+            }
+
+            width: 100%;
+            padding: 15px;
         }
-
-        width: 100%;
-        padding: 15px;
     }
 }

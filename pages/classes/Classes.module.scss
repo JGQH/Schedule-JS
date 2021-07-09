@@ -1,11 +1,32 @@
 @use 'styles/utilities' as *;
 
 .classesContainer {
-    &Navbar {
-        width: 75%;
-        .classesNavigator {
-            display: inline-block;
-            width: 50%;
+    display: grid;
+
+    h1 {
+        text-align: center;
+    }
+
+    .classesNavbar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "title   title"
+        "classes groups";
+
+        #cnavTitle {
+            grid-area: title;
+        }
+
+        #cnavClasses {
+            grid-area: classes;
+        }
+
+        #cnavGroups {
+            grid-area: groups;
+        }
+
+        .classesOption {
             padding: 10px;
 
             select {
@@ -18,9 +39,10 @@
         }
     }
     
-    &Visual {
-        width: 87.5%;
-        @include small{
+    .classesVisual {
+        justify-self: center;
+
+        @include medium{
             width: 60%;
         }
     }

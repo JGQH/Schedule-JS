@@ -1,18 +1,18 @@
 const NavbarOptions = [
     {
-        'text':'Tutorial',
+        'text':'Inicio',
         'href':'/'
     },
     {
-        'text':'Administrar Bloques',
+        'text':'Bloques',
         'href':'/blocks/create'
     },
     {
-        'text':'Visualizar Cursos',
+        'text':'Cursos',
         'href':'/classes'
     },
     {
-        'text':'Horarios Generados',
+        'text':'Horarios',
         'href':'/generate/selector'
     }
 ]

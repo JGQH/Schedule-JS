@@ -1,25 +1,43 @@
 @use 'styles/utilities' as *;
 
-.svgCourses {
-    grid-area: courses;
-}
 
-.svgGraph {
-    grid-area: schedule;
-}
+.scheduleVisualizer {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+    "schedule schedule schedule"
+    "arrowp courses arrown";
 
-.svgArrow {
-    &Prev, &Next {
-        aspect-ratio: 1;
+    @include small {
+        grid-template-columns: 2fr 5fr 2fr;
+        grid-template-areas:
+        "courses schedule arrowp"
+        "courses schedule null"
+        "courses schedule arrown";
     }
 
-    &Prev {
-        @include arrow(-90deg, -180deg);
-        grid-area: arrowp;
+    .svgCourses {
+        grid-area: courses;
     }
-
-    &Next {
-        @include arrow(90deg, 0);
-        grid-area: arrown;
+    
+    .svgGraph {
+        grid-area: schedule;
+    }
+    
+    .svgArrow {
+        &Prev, &Next {
+            cursor: pointer;
+            aspect-ratio: 1;
+            justify-self: center;
+            align-self: center;
+        }
+    
+        &Prev {
+            grid-area: arrowp;
+        }
+    
+        &Next {
+            grid-area: arrown;
+        }
     }
 }

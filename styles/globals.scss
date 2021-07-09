@@ -1,0 +1,29 @@
+@use './utilities' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: $color_5;
+    background-color: $color_0;
+
+    #__next {
+        width: 100vw;
+        height: 100vh;
+
+        display: grid;
+        & > div:last-child {
+            margin-top: 3rem;
+            width: 90%;
+            justify-self: center;
+            align-self: center;
+
+            @include small {
+               width: 60%;
+            }
+        }
+    }
+}

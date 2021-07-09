@@ -1,12 +1,30 @@
 @use 'styles/utilities' as *;
 
 .blocksNavbar {
-    width: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "title  title"
+    "create delete";
+
+    .bnavTitle {
+        grid-area: title;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+    #bnavCreate {
+        grid-area: create;
+    }
+
+    #bnavDelete {
+        grid-area: delete;
+    }
     
-    .blocksOption {
-        padding: 10px;;
-        display: inline-block;
-        width: 50%;
+    .bnavOption {
+        padding: 10px;
 
         button {
             width: 100%;
