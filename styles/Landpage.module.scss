@@ -1,3 +1,5 @@
+@use 'styles/utilities' as *;
+
 .landpageContainer {
     .landpageTitle {
         text-align: center;
@@ -5,5 +7,11 @@
 
     .landpageParagraph {
         padding: 10px;
+
+        a {
+            all: unset;
+            cursor: pointer;
+            color: getBlue(3);
+        }
     }
 }

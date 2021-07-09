@@ -13,9 +13,9 @@
 
     .checkerClass {
         padding: 10px;
-        border: 1px solid $color_2;
+        border: 1px solid getBlue(2);
         border-radius: 10px;
-        background-color: $color_1;
+        background-color: getDark(0);
     }
 
     .checkerGroups {

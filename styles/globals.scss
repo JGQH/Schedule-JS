@@ -7,12 +7,12 @@
 }
 
 body {
-    color: $color_5;
-    background-color: $color_0;
+    color: getBlue(2);
+    background: linear-gradient(0, getDark(1) 0%, getDark(3) 100%);
 
     #__next {
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
 
         display: grid;
         & > div:last-child {

@@ -1,10 +1,22 @@
-/* Palette "CP_RUST-5", taken from "https://lospec.com/palette-list/cp_rust-5" */
-$color_0: #230000;
-$color_1: #712f30;
-$color_2: #a54932;
-$color_3: #e18866;
-$color_4: #f0bb9c;
-$color_5: #ffe2c6;
+@use 'sass:list';
+
+$dark_tones: #000000, #0A0A0A, #131313, #181818, #1F1F1F;
+$green_tones: #034269, #1C5E85, #276699, #1F6EA3, #247EB4;
+
+@function getColor($list, $i){
+    @if($i >= 0) {
+        $i: $i + 1;
+    } 
+    @return list.nth($list, $i);
+}
+
+@function getDark($i) {
+    @return getColor($dark_tones, $i);
+}
+
+@function getBlue($i) {
+    @return getColor($green_tones, $i);
+}
 
 @mixin small {
     @media only screen and (min-width: 600px){
@@ -25,14 +37,15 @@ $color_5: #ffe2c6;
 }
 
 @mixin styles_clicker {
-    color: $color_5;
-    border-color: $color_2;
-    background-color: $color_1;
+    color: getBlue(3);
+    border-color: getBlue(0);
+    background-color: getDark(0);
+    transition: all .25s;
 
     &:hover {
         @content;
         cursor: pointer;
-        border-color: $color_1;
-        background-color: $color_2;
+        border-color: getBlue(3);
+        background-color: getDark(3);
     }
 }

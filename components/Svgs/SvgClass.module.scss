@@ -2,14 +2,14 @@
 
 .svgClass {
     path {
-        stroke: $color_5;
+        stroke: getBlue(3);
     }
 
     text {
-        fill: $color_5;
+        fill: getBlue(2);
     }
 
     .svgBlock {
-        fill: $color_2;
+        fill: getBlue(2);
     }
 }

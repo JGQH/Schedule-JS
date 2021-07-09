@@ -21,12 +21,16 @@
     
     .svgGraph {
         grid-area: schedule;
+        path {
+            fill: #CCC
+        }
     }
     
     .svgArrow {
         &Prev, &Next {
             @include styles_clicker;
             padding: 1rem;
+            border: 1px solid getBlue(3);
             border-radius: 1rem;
 
             aspect-ratio: 1;
