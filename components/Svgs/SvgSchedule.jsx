@@ -1,29 +1,12 @@
 import { useState, useEffect } from 'react';
 import { mapJson, sizeJson } from '@Utilities/JsonManager'
 import { startHours, endHours, weekDays } from '@Utilities/ScheduleTime'
+import { getColor, useWindowSize } from './SvgScheduleHooks'
 import styles from './SvgSchedule.module.scss'
 
-function getHex(val = 2){
-    return val.toString(16).padStart(2, '0');
-}
-
-function getColor(p){
-    let [R, G, B] = [0, 0, 0];
-    if(p < 1){ //Red to Green
-        G = Math.floor(255 * p);
-        R = 255 - G;
-    }else if(p < 2){ //Green to Blue
-        B = Math.floor(255 * (p - 1));
-        G = 255 - B;
-    }else{ //Blue to Red
-        R = Math.floor(255 * (p - 2));
-        B = 255 - R;
-    }
-    return `#${getHex(R)}${getHex(G)}${getHex(B)}`;
-}
-
 const SvgSchedule = ({schedules = []}) => {
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0)
+    const { width } = useWindowSize()
 
     function findColor(key) {
         const p = 3 * (key / sizeJson(schedules[index]));
@@ -95,10 +78,10 @@ const SvgSchedule = ({schedules = []}) => {
             </svg>
         </div>
         <div className={styles.svgArrowPrev} onClick={() => setSchedule(index - 1)}>
-            <h1>◄</h1>
+            <h1>{width < 600 ? '◄' : '▲'}</h1>
         </div>
         <div className={styles.svgArrowNext} onClick={() => setSchedule(index + 1)}>
-            <h1>►</h1>
+            <h1>{width < 600 ? '►' : '▼'}</h1>
         </div>
     </div>)
 }

@@ -12,7 +12,6 @@
         grid-template-columns: 2fr 5fr 2fr;
         grid-template-areas:
         "courses schedule arrowp"
-        "courses schedule null"
         "courses schedule arrown";
     }
 
@@ -26,7 +25,10 @@
     
     .svgArrow {
         &Prev, &Next {
-            cursor: pointer;
+            @include styles_clicker;
+            padding: 1rem;
+            border-radius: 1rem;
+
             aspect-ratio: 1;
             justify-self: center;
             align-self: center;
