@@ -27,7 +27,31 @@
     }
 
     .navSelected {
+        position: relative;
+
+        &::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            background: linear-gradient(0, getBlue(3) 0%, getBlue(0) 100%);
+            border-radius: $paddingSpace $paddingSpace 0 0;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            animation: navSelectedAnim .25s forwards ease-out;
+        }
+
         color: getDark(0);
-        background: linear-gradient(0, getBlue(3) 0%, getBlue(0) 100%);
+    }
+}
+
+@keyframes navSelectedAnim {
+    from {
+        top: 100%;
+    }
+    to {
+        top: 0;
     }
 }

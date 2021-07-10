@@ -1,4 +1,5 @@
 import styles from 'styles/Landpage.module.scss'
+import { createTest } from './indexHooks'
 
 export default function Home() {
     return (
@@ -22,6 +23,9 @@ export default function Home() {
             <h3>¿Qué hace luego de recorrer todas las posibilidades?</h3>
             <p>Luego de hacer eso (Sin contar todas las posibilidades que tienen algún bloque se cruzándose con otro), se devuelve la lista de horarios generados. Los horarios se presentan uno por uno mediante un selector, mostrando una gráfica del horario actual.</p>
             <p>La selección de cursos a considerar, además de la visualización de resultados, se realiza en el apartado <i>'Horarios Generados'</i></p>
+        </div>
+        <div className={styles.landpageClicker}>
+            <button onClick={createTest}>Click aquí para usar un ejemplo</button>
         </div>
     </div>)
 }

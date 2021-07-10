@@ -14,4 +14,13 @@
             color: getBlue(3);
         }
     }
+
+    .landpageClicker {
+        text-align: center;
+
+        button {
+            padding: 10px;
+            @include styles_clicker;
+        }
+    }
 }

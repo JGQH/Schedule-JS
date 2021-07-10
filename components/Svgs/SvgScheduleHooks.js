@@ -26,6 +26,7 @@ export function useWindowSize() {
         function doResize() {
             setWidth(window.innerWidth)
         }
+        doResize();
 
         window.addEventListener('resize', doResize)
         return () => window.removeEventListener('resize', doResize)

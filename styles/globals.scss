@@ -9,6 +9,7 @@
 body {
     color: getBlue(2);
     background: linear-gradient(0, getDark(1) 0%, getDark(3) 100%);
+    overflow-x: hidden;
 
     #__next {
         width: 100vw;

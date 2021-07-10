@@ -40,7 +40,7 @@ export function uploadBlock(block) {
     const course = `${block.class} [${block.group}] (${blockDay})`;
 
     if(block.class.trim().length > 0 && block.group.trim().length > 0) {
-        if(window.confirm(`¿Seguro que desea guardar este bloque del curso ${course})?`)){
+        if(window.confirm(`¿Seguro que desea guardar este bloque del curso ${course}?`)){
             const newBlock = {
                 'Day': block.day,
                 'Start': block.start,
