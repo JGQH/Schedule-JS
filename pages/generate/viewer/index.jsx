@@ -1,6 +1,6 @@
 import GeneratorNavbar from '@Components/GeneratorNavbar'
 import SvgSchedule from '@Components/SvgSchedule'
-import { useSchedules } from './viewerHooks'
+import { useSchedules } from '@Library/viewerHooks'
 import styles from '../Generator.module.scss'
 
 export default function Selector() {

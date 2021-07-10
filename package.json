@@ -9,12 +9,14 @@
   },
   "scripts": {
     "dev": "next dev",
+    "lint": "next lint",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
+      "next"
     ]
   },
   "browserslist": {
@@ -30,6 +32,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-next": "^11.0.1",
     "sass": "^1.35.1"
   }
 }

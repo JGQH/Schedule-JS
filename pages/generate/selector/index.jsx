@@ -1,7 +1,7 @@
 import GeneratorNavbar from '@Components/GeneratorNavbar'
 import DispClasses from '@Components/DispSelectors'
 import { sizeJson } from '@Utilities/JsonManager'
-import { useSelectors } from './selectorHooks'
+import { useSelectors } from '@Library/selectorHooks'
 import styles from '../Generator.module.scss'
 
 export default function Viewer() {

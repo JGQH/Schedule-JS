@@ -15,7 +15,7 @@ Simple React JS app that creates an schedule\* for you.
 This project is a practice for introduction to SASS/SCSS and getting it to work alongside JSX. It's a simple website to automatize the creation of schedules for the next semester, while also using localStorage to keep that data stored.
 
 ## Technologies
-- NodeJS v15.8.0
+- NodeJS v16.3.0
 
 ## Illustrations
 
@@ -29,4 +29,3 @@ This project is a practice for introduction to SASS/SCSS and getting it to work 
 
 
 ## To-Do
-- Publish in github pages

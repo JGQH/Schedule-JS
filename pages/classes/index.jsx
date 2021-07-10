@@ -1,5 +1,5 @@
 import SvgClass from '@Components/SvgClass'
-import { useClass } from './classHooks'
+import { useClass } from '@Library/classHooks'
 import styles from './Classes.module.scss'
 
 export default function Classes() {

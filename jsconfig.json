@@ -11,6 +11,13 @@
             ],
             "@Utilities/*":[
                 "utilities/*"
+            ],
+            "@Library/*":[
+                "lib/blocksCreate/*",
+                "lib/classes/*",
+                "lib/generateSelector/*",
+                "lib/generateViewer/*",
+                "lib/index/*"
             ]
         }
     }
