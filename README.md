@@ -19,13 +19,13 @@ This project is a practice for introduction to SASS/SCSS and getting it to work 
 
 ## Illustrations
 
-| Tutorial | Create Blocks |
+| Tutorial | Blocks |
 |:---:|:---:|
 |![Tutorial](./readme/img_01.png)|![Blocks](./readme/img_02.png)|
 
 | Courses | Schedules |
 |:---:|:---:|
-|![Courses](./readme/img_03.png)| *No image yet* |
+|![Courses](./readme/img_03.png)|![Schedules](./readme/img_04.png)|
 
 
 ## To-Do

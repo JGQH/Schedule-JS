@@ -58,7 +58,7 @@ export function deleteClasses(className, groupName, index) {
         }
     } else {
         //Otherwise, only delete the specified block
-        delete currentBlocks[index]
+        currentBlocks.splice(index, 1)
         currentGroups[groupName] = currentBlocks
         classStorage[className] = currentGroups
     }
